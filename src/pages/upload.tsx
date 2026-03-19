@@ -1,11 +1,11 @@
 import { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/router'
-import { db, storage } from '@/lib/firebase'
+import { db, storage } from '../../lib/firebase'
 import { collection, addDoc, getDocs, query, where, updateDoc, doc } from 'firebase/firestore'
 import { ref as sRef, uploadBytes, getDownloadURL } from 'firebase/storage'
-import { useAuth } from '@/lib/auth-context'
-import Layout from '@/components/layout/Layout'
-import { parseFlexDate, parseVestingStr, smartSplit, extractGrantNo, fmtN, fmtDate, generateGrantNumber, computeVestingStatus, today } from '@/lib/utils'
+import { useAuth } from '../../lib/auth-context'
+import Layout from '../../components/layout/Layout'
+import { parseFlexDate, parseVestingStr, smartSplit, extractGrantNo, fmtN, fmtDate, generateGrantNumber, computeVestingStatus, today } from '../../lib/utils'
 
 type Tab = 'pdf'|'csv'|'letters'
 
